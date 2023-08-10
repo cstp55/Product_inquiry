@@ -1,0 +1,22 @@
+<!-- app/code/Company/ProductInquiry/view/adminhtml/ui_component/inquiry_sendreply.xml -->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <modal name="send_reply_modal">
+        <settings>
+            <options>
+                <title translate="true">Send Reply Email</title>
+            </options>
+        </settings>
+        <fieldset name="send_reply_fieldset">
+            <field name="subject" formElement="input">
+                <settings>
+                    <label translate="true">Subject</label>
+                </settings>
+            </field>
+            <field name="message" formElement="textarea">
+                <settings>
+                    <label translate="true">Message</label>
+                </settings>
+            </field>
+        </fieldset>
+    </modal>
+</form>

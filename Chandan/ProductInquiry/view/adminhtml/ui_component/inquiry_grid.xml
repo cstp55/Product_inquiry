@@ -1,0 +1,57 @@
+<!-- app/code/Chandan/ProductInquiry/view/adminhtml/ui_component/inquiry_grid.xml -->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+    </listingToolbar>
+    <dataSource name="inquiry_grid_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Chandan\ProductInquiry\Model\ResourceModel\Inquiry\Grid\DataProvider</argument>
+            <argument name="name" xsi:type="string">inquiry_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">inquiry_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <columns name="inquiry_columns">
+        <actionsColumn name="actions" class="Chandan\ProductInquiry\Ui\Component\Listing\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">inquiry_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+        <column name="inquiry_id" class="Chandan\ProductInquiry\Ui\Component\Listing\Column\InquiryId">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">true</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="label" xsi:type="string" translate="true">Inquiry ID</item>
+                </item>
+            </argument>
+        </column>
+        <column name="name" class="Chandan\ProductInquiry\Ui\Component\Listing\Column\Name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">true</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                </item>
+            </argument>
+        </column>
+        <!-- Add more columns for other inquiry fields here -->
+        <column name="product_name" class="Chandan\ProductInquiry\Ui\Component\Listing\Column\ProductName">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="label" xsi:type="string" translate="true">Product Name</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

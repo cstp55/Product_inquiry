@@ -1,0 +1,6 @@
+<!-- app/code/Chandan/ProductInquiry/etc/adminhtml/menu.xml -->
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <add id="Chandan_ProductInquiry::inquiry" title="Inquiries" module="Chandan_ProductInquiry" sortOrder="20" resource="Chandan_ProductInquiry::inquiry"/>
+    <add id="Chandan_ProductInquiry::inquiry_manage" title="Manage Product Inquiries" module="Chandan_ProductInquiry" sortOrder="10" action="productinquiry/inquiry/index" parent="Chandan_ProductInquiry::inquiry"/>
+</menu>
+

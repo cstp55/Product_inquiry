@@ -1,0 +1,8 @@
+<!-- app/code/Chandan/ProductInquiry/etc/adminhtml/routes.xml -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="productinquiry" frontName="productinquiry">
+            <module name="Chandan_ProductInquiry"/>
+        </route>
+    </router>
+</config>

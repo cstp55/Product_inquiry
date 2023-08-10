@@ -1,0 +1,18 @@
+<?php
+/**
+ * Add Buy Now template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php $_viewModel = $block->getViewModel();?>
+<div class="inquiry-button-div" data-action="add-to-inquiry" id="inquiry-view" data-bind="scope:'inquiry-view'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#inquiry-view": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>
