@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="product_inquiry_admin_notification" label="Send inquiry Reply mail to Customer" file="product_inquiry_admin_notification.html" type="html" module="Chandan_ProductInquiry" area="frontend"/>
+</config>    

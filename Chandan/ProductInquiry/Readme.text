@@ -1,0 +1,72 @@
+Module Documentation: Product Inquiry Form and Notification 
+Table of Contents
+    Overview of the Module
+    Features and Functionality
+    Installation and Setup
+    Showcase practical examples of module
+    Enhancement points
+    Testing
+
+
+Overview of the Module
+    Magento 2 Product Inquiry module 
+        The "Product Inquiry Form and Notification" module enhances your Magento 2 store by providing a seamless way for customers to submit inquiries about products directly from the product detail pages. This module streamlines communication between customers and administrators, allowing customers to ask questions about products and receive timely responses while empowering administrators to efficiently manage and address customer inquiries.
+
+Features and Functionality
+    Enable/Disable the Module
+    Configuration Options
+    Product Inquiry Form
+    Placing the Inquiry Form on Product Detail Page
+    Required Fields and Validation
+    Submitting an Inquiry
+    Customer Notification
+    Admin Interface
+    Accessing the Admin Panel
+    Managing Inquiries
+    Viewing Product Inquiries
+    Replying to Inquiries
+    Displaying Inquiries in Admin Grid
+    Filtering and Sorting
+
+Clear Instructions: Provide step-by-step instructions for installation, setup, and usage.
+    #Installation
+        Magento2 Product Inquiry module installation is very easy, please follow the steps for installation-
+            1. Unzip the respective extension zip and create Chandan(vendor) and ProductInquiry(module) name folder inside your magento/app/code/ directory and then move all module's files into magento root directory Magento2/app/code/Chandan/ProductInquiry/ folder.
+
+        #Run Following Command via terminal
+        -----------------------------------
+            php bin/magento setup:upgrade
+            php bin/magento setup:di:compile
+            php bin/magento setup:static-content:deploy
+
+        2. Flush the cache and reindex all.
+
+Now module is properly installed
+
+Showcase practical examples of module.
+        Steps
+            1. Admin End 
+                Setup the module Configuration.
+                    Enable/Disable.
+                    Select Email Templates. 
+                Inquiry Grid Management
+                    Grid lising with customer name, email, product name, subject and message 
+                    Sorting and Filtering is avaible in Grid
+                    Action column is avaible for reply message.
+
+            2. FrontEnd
+                Go To Catalog Product View Page.
+                Click on the button Inquiry.
+                Filled the Required Fields.
+                Submit the form.
+                Getting success message or error message.
+
+Need to More improvement : 
+            1. Need Bulk option at grid for delete, manage status.
+            2. Need to inquiry view page to check there mail chain(chat).
+            3. Need to mail Dyanamic modifying from Admin configuration.
+
+
+Testing: Verify each step and instruction to ensure accuracy.
+    vendor/bin/phpunit --testsuite=Chandan_ProductInquiry
+
