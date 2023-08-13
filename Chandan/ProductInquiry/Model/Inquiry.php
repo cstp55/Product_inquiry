@@ -4,9 +4,56 @@ namespace Chandan\ProductInquiry\Model;
 use Magento\Framework\Model\AbstractModel;
 use Chandan\ProductInquiry\Api\InquiryManagementInterface;
 
-class Inquiry  extends \Magento\Framework\Api\AbstractExtensibleObject implements InquiryManagementInterface
+class Inquiry  extends AbstractModel  implements InquiryManagementInterface
 {
 
+        /**
+     * No route page id.
+     */
+    public const NOROUTE_ENTITY_ID = 'no-route';
+
+    public const CACHE_TAG = 'product_inquiry';
+
+    /**
+     * @var string
+     */
+    protected $_cacheTag = 'product_inquiry';
+
+    /**
+     * Prefix of model events names.
+     *
+     * @var string
+     */
+    protected $_eventPrefix = 'product_inquiry';
+
+    /**
+     * Initialize resource model.
+     */
+    protected function _construct()
+    {
+        $this->_init(
+            \Chandan\ProductInquiry\Model\ResourceModel\Inquiry::class
+        );
+    }
+
+    public function load($id, $field = null)
+    {
+        if ($id === null) {
+            return $this->noRouteInquiry();
+        }
+
+        return parent::load($id, $field);
+    }
+
+    public function getIdentities()
+    {
+        return [self::CACHE_TAG.'_'.$this->getId()];
+    }
+
+    public function noRouteInquiry()
+    {
+        return $this->load(self::NOROUTE_ENTITY_ID, $this->getIdFieldName());
+    }
     public function setInquiryId($enquiry_id)
     {
         return $this->setData('inquiry_id', $enquiry_id);
